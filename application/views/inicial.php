@@ -22,7 +22,7 @@
 	</div>
 	<div class="container">
 
-		<a href="index.php/Producto_Controller/factura_nueva"><button type="button" class="btn btn-warning btn-lg btn-block">Facturar</button></a>
+		<a href="index.php/Venta_controller"><button type="button" class="btn btn-warning btn-lg btn-block">Facturar</button></a>
 		<a href="index.php/Clientes_controller"><button type="button" class="btn btn-default btn-lg btn-block">Manejo de Clientes</button></a>
 		<a href="index.php/Producto_Controller"><button type="button" class="btn btn-warning btn-lg btn-block">Gestion de Inventario</button></a>
 
