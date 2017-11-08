@@ -18,6 +18,7 @@
 		<div class="alert alert-warning alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <strong>¡Bienvenido!</strong> Esta es la Tienda...
+	  <strong>angelica</strong>
 	</div>
 	</div>
 	<div class="container">
