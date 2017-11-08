@@ -30,7 +30,7 @@
 			<div class="input-group">
   				<span class="input-group-addon">Numero</span>
 
-  				<label>hola mundo</label>
+  				 
   				<input type="text" class="form-control" value="<?php foreach($ultima as $valor){ echo $valor['codigo_venta']+1; }; ?>" readonly></input>
 				</div>
 				<span class="group-addon">Cliente</span>
