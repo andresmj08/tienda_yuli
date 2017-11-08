@@ -30,7 +30,7 @@
 			<div class="input-group">
   				<span class="input-group-addon">Numero</span>
 
-  				 
+
   				<input type="text" class="form-control" value="<?php foreach($ultima as $valor){ echo $valor['codigo_venta']+1; }; ?>" readonly></input>
 				</div>
 				<span class="group-addon">Cliente</span>
@@ -43,18 +43,53 @@
 	  </div>
 	</div>
 
+<div class="panel panel-default">
+
+  <div class="panel-heading">Productos en Factura</div>
+
+  <table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Cod_Producto</th>
+			<th>Cantidad</th>
+			<th>Valor</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php	foreach($productos_exitentes as $valor){ ?>
+
+      <tr>
+        <td><?php echo $valor['codigo_producto']; ?></td>
+        <td><?php echo $valor['cantidad']; ?></td>
+        <td><?php echo $valor['valor_unitario']; ?></td>
+      </tr>
+		<?php }; ?>
+		</tbody>
+  </table>
+</div>
+
 	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Añadir Producto</h3>
 	  </div>
+		<form method="post" action="Venta_controller/cargar_a_venta">
+			<input type="text" class="form-control" name="codigo_venta" value="<?php foreach($ultima as $valor){ echo $valor['codigo_venta']+1; }; ?>" readonly></input>
 	  <div class="panel-body">
 			<select name="prd" class="form-control">
 				<<?php foreach ($producto as $valor): ?>
 					<option value="<?php echo $valor['codigo']; ?>"><?php echo $valor['nombre']; ?></option>
 				<?php endforeach; ?>
 			</select>
-			<span class="input-group-addon">Valor</span><input type="text" name="valor_u"></input>
+			<div class="input-group">
+			<span class="input-group-addon">Valor Unitario</span>
+			<input type="text" class="form-control" name="valor"></input>
+			<span class="input-group-addon">Cantidad</span>
+			<input type="text" class="form-control" name="cantidad"></input>
+
 	  </div>
+		<input type="submit" class="form-control bnt btn-success" value="Agregar"></input>
+	  </div>
+		</form>
 	</div>
 
 

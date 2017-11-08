@@ -13,6 +13,7 @@ class Venta_controller extends CI_Controller {
 		$dato['ultima']= $this->venta->traer_ultimo();
 		$dato['cliente']= $this->cliente->lista();
 		$dato['producto']= $this->producto->lista();
+		$dato['productos_exitentes']= $this->producto->cargar_prd(2);
 		$this->load->view('venta_view',$dato);
 
 	}
@@ -31,8 +32,21 @@ class Venta_controller extends CI_Controller {
 		$this->producto->agregar($prd,$combo);
 			redirect(site_url());
 
+	}
 
+	public function cargar_a_venta(){
+		$cod_venta=$this->input->post('codigo_venta');
+		$cod_prd=$this->input->post('prd');
+		$cantidad=$this->input->post('cantidad');
+		$valor=$this->input->post('valor');
 
+		$combo = array('codigo_venta' =>$cod_venta ,
+	 									'codigo_producto'=>$cod_prd,
+										'cantidad'=>$cantidad,
+										'valor_unitario'=>$valor);
+
+		$this->venta->cargar_a_factura($combo);
+		redirect('Venta_controller');
 	}
 
 

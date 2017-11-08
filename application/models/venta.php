@@ -28,4 +28,7 @@ public function traer_ultimo(){
 		return $query->result_array();
 	}
 
+	public function cargar_a_factura($dato){
+		return $this->db->insert('detalle_venta',$dato);
+	}
 }

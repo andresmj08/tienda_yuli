@@ -24,4 +24,12 @@ public function agregar($nombre, $dato){
 		return $query->result_array();
 	}
 
+	public function cargar_prd($dato){
+		$this->db->where('codigo_venta',$dato);
+		$this->db->from('detalle_venta');
+		$query=$this->db->get();
+		return $query->result_array();
+	}
+
+
 }
