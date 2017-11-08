@@ -12,6 +12,7 @@ class Venta_controller extends CI_Controller {
 	public function index(){
 		$dato['ultima']= $this->venta->traer_ultimo();
 		$dato['cliente']= $this->cliente->lista();
+		$dato['producto']= $this->producto->lista();
 		$this->load->view('venta_view',$dato);
 
 	}

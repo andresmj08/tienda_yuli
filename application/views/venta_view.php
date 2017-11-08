@@ -43,10 +43,15 @@
 
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Título del panel con estilo h3</h3>
+	    <h3 class="panel-title">Añadir Producto</h3>
 	  </div>
 	  <div class="panel-body">
-	    Contenido del panel
+			<select name="prd" class="form-control">
+				<<?php foreach ($producto as $valor): ?>
+					<option value="<?php echo $valor['codigo']; ?>"><?php echo $valor['nombre']; ?></option>
+				<?php endforeach; ?>
+			</select>
+			<span class="input-group-addon">Valor</span><input type="text" name="valor_u"></input>
 	  </div>
 	</div>
 
